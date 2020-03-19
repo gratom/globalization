@@ -63,7 +63,7 @@ namespace Globalization.Global
             {
                 if (baseManagers.Exists(x => x.GetManageType() == typeof(T)))
                 {
-                    Debugger.SetExeption("Manager, that you want to attach, already exist.\nManager type is " + typeof(T).ToString());
+                    Debugger.SetMessage("Manager, that you want to attach, already exist.\nManager type is " + typeof(T).ToString());
                     return false;
                 }
                 baseManagers.Add(baseManagerInstance);
@@ -71,7 +71,7 @@ namespace Globalization.Global
                 CheckCallbacks<T>();
                 return true;
             }
-            Debugger.SetExeption("Manager, that you want to attach, is null.\nManager type is " + typeof(T).ToString());
+            Debugger.SetMessage("Manager, that you want to attach, is null.\nManager type is " + typeof(T).ToString());
             return false;
         }
 
@@ -88,7 +88,7 @@ namespace Globalization.Global
                 {
                     if (baseManagers.Exists(x => x.GetManageType() == baseManagerInstance.GetManageType()))
                     {
-                        Debugger.SetExeption("Manager, that you want to attach, already exist.\nManager type is " + baseManagerInstance.GetManageType().ToString());
+                        Debugger.SetMessage("Manager, that you want to attach, already exist.\nManager type is " + baseManagerInstance.GetManageType().ToString());
                         return false;
                     }
                     baseManagers.Add(baseManagerInstance);
@@ -98,11 +98,11 @@ namespace Globalization.Global
                 }
                 else
                 {
-                    Debugger.SetExeption("Manager, that you want to attach, is not a class.\nManager type is " + baseManagerInstance.GetType().ToString());
+                    Debugger.SetMessage("Manager, that you want to attach, is not a class.\nManager type is " + baseManagerInstance.GetType().ToString());
                     return false;
                 }
             }
-            Debugger.SetExeption("Manager, that you want to attach, is null.\nManager type is " + baseManagerInstance.GetType().ToString());
+            Debugger.SetMessage("Manager, that you want to attach, is null.\nManager type is " + baseManagerInstance.GetType().ToString());
             return false;
         }
 
@@ -138,7 +138,7 @@ namespace Globalization.Global
             }
             else
             {
-                Debugger.SetExeption("You try to create null callback. For manager " + typeof(T));
+                Debugger.SetMessage("You try to create null callback. For manager " + typeof(T));
             }
         }
 
@@ -151,7 +151,7 @@ namespace Globalization.Global
             bool isOK = baseManagers.Remove(baseManagers.FirstOrDefault(x => x.GetManageType() == typeof(T)));
             if (!isOK)
             {
-                Debugger.SetExeption("Manager, that you want to remove, is not exist.\nManager type is " + typeof(T).ToString());
+                Debugger.SetMessage("Manager, that you want to remove, is not exist.\nManager type is " + typeof(T).ToString());
             }
         }
 
@@ -160,7 +160,7 @@ namespace Globalization.Global
             bool isOK = baseManagers.Remove(baseManagers.FirstOrDefault(x => x.GetManageType() == type));
             if (!isOK)
             {
-                Debugger.SetExeption("Manager, that you want to remove, is not exist.\nManager type is " + type.ToString());
+                Debugger.SetMessage("Manager, that you want to remove, is not exist.\nManager type is " + type.ToString());
             }
         }
 

@@ -28,7 +28,7 @@ namespace Globalization.Tools
             }
             catch (Exception e)
             {
-                Debugger.SetExeption(e.ToString());
+                Debugger.SetMessage(e.ToString());
             }
         }
 
@@ -51,7 +51,7 @@ namespace Globalization.Tools
             }
             catch (Exception e)
             {
-                Debugger.SetExeption(e.ToString());
+                Debugger.SetMessage(e.ToString());
             }
             return "";
         }
@@ -103,7 +103,7 @@ namespace Globalization.Tools
                     }
                     catch (Exception e)
                     {
-                        Debugger.SetExeption(e.ToString());
+                        Debugger.SetMessage(e.ToString());
                     }
                 }
             }
